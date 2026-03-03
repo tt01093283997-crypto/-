@@ -5,7 +5,7 @@ import confetti from 'canvas-confetti';
 
 const SlidingPuzzle = () => {
     const [gridSize, setGridSize] = useState(3);
-    const [imageSrc, setImageSrc] = useState('/codari_robot.png');
+    const [imageSrc, setImageSrc] = useState('./codari_robot.png');
     const [tiles, setTiles] = useState([]);
     const [moves, setMoves] = useState(0);
     const [seconds, setSeconds] = useState(0);
