@@ -260,15 +260,7 @@ const SlidingPuzzle = () => {
                                 <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Numbers</span>
                             </button>
 
-                            <button
-                                onClick={() => setShowHint(!showHint)}
-                                className="group flex flex-col items-center gap-2"
-                            >
-                                <div className={`w-12 h-12 glass rounded-full flex items-center justify-center transition-all ${showHint ? 'bg-premium-500 text-white' : 'group-hover:bg-premium-500/20 group-hover:text-premium-400'}`}>
-                                    <Eye className="w-6 h-6" />
-                                </div>
-                                <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Original</span>
-                            </button>
+
 
                             <button
                                 onClick={() => initGame()}
@@ -302,6 +294,23 @@ const SlidingPuzzle = () => {
                                     </button>
                                 ))}
                             </div>
+                        </div>
+
+                        <div className="glass p-6 rounded-3xl">
+                            <h3 className="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest flex items-center gap-2">
+                                <Eye className="w-4 h-4" /> Original View
+                            </h3>
+                            <button
+                                onClick={() => setShowHint(!showHint)}
+                                className={`w-full border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all ${showHint ? 'border-premium-500 bg-premium-500/10' : 'border-slate-700 hover:border-slate-500'}`}
+                            >
+                                <div className={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 transition-colors ${showHint ? 'bg-premium-500 text-white' : 'bg-slate-800 text-slate-400'}`}>
+                                    <Eye className="w-5 h-5" />
+                                </div>
+                                <p className={`text-xs font-bold uppercase tracking-widest transition-colors ${showHint ? 'text-premium-400' : 'text-slate-400'}`}>
+                                    {showHint ? "Click to Close" : "Click to View Original"}
+                                </p>
+                            </button>
                         </div>
 
                         <div className="glass p-6 rounded-3xl">
