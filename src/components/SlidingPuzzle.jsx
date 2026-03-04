@@ -12,7 +12,7 @@ const SlidingPuzzle = () => {
     const [isActive, setIsActive] = useState(false);
     const [isWon, setIsWon] = useState(false);
     const [showHint, setShowHint] = useState(false);
-
+    const [showNumbers, setShowNumbers] = useState(true);
     const timerRef = useRef(null);
 
     // Initialize and Shuffle
@@ -39,6 +39,7 @@ const SlidingPuzzle = () => {
         setSeconds(0);
         setIsActive(true);
         setIsWon(false);
+        setShowNumbers(prev => !prev);
     }, [gridSize, imageSrc]);
 
     // Solvability check for sliding puzzle
@@ -75,7 +76,6 @@ const SlidingPuzzle = () => {
         return () => clearInterval(timerRef.current);
     }, [isActive, isWon]);
 
-    const [showNumbers, setShowNumbers] = useState(true);
 
     const handleTileClick = (index) => {
         if (isWon) return;
